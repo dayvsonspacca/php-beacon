@@ -1,0 +1,46 @@
+name: Split packages
+
+on:
+  push:
+    branches: [main]
+    tags: ['*']
+
+env:
+  GITHUB_TOKEN: ${{ secrets.SPLIT_TOKEN }}
+
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - local_path: contracts
+            repository: php-beacon-contracts
+          - local_path: guzzle-client
+            repository: php-beacon-guzzle-client
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Split ${{ matrix.package.repository }} (branch)
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: symplify/monorepo-split-github-action@v2.3.0
+        with:
+          package_directory: packages/${{ matrix.package.local_path }}
+          repository_organization: dayvsonspacca
+          repository_name: ${{ matrix.package.repository }}
+          user_name: 'Dayvson Spacca'
+          user_email: 'spacca.dayvson@gmail.com'
+
+      - name: Split ${{ matrix.package.repository }} (tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: symplify/monorepo-split-github-action@v2.3.0
+        with:
+          tag: ${{ github.ref_name }}
+          package_directory: packages/${{ matrix.package.local_path }}
+          repository_organization: dayvsonspacca
+          repository_name: ${{ matrix.package.repository }}
+          user_name: 'Dayvson Spacca'
+          user_email: 'spacca.dayvson@gmail.com'
