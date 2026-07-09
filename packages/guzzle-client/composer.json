@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=8.4",
         "dayvsonspacca/beacon-contracts": "^1.0",
         "guzzlehttp/guzzle": "^7.14",
         "php-standard-library/url": "^6.2",

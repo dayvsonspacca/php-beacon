@@ -21,6 +21,7 @@
         }
     },
     "require": {
+        "php": ">=8.4",
         "php-standard-library/type": "^6.2",
         "php-standard-library/url": "^6.2",
         "php-standard-library/json": "^6.2",
