@@ -1,0 +1,46 @@
+{
+    "name": "dayvsonspacca/beacon-guzzle-client",
+    "description": "Guzzle implementation of the Beacon contracts",
+    "type": "library",
+    "keywords": ["beacon", "guzzle", "client", "events", "pubsub"],
+    "authors": [
+        {
+            "name": "Dayvson Spacca",
+            "email": "spacca.dayvson@gmail.com"
+        }
+    ],
+    "require": {
+        "dayvsonspacca/beacon-contracts": "^1.0",
+        "guzzlehttp/guzzle": "^7.14",
+        "php-standard-library/url": "^6.2",
+        "php-standard-library/json": "^6.2",
+        "php-standard-library/type": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beacon\\Guzzle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Beacon\\Guzzle\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.2",
+        "carthage-software/mago": "^1.43.0"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "mago lint",
+        "format": "mago format",
+        "format:check": "mago format --check",
+        "analyze": "mago analyze",
+        "check": [
+            "@format:check",
+            "@lint",
+            "@analyze",
+            "@test"
+        ]
+    }
+}
