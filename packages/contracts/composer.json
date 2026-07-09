@@ -2,7 +2,13 @@
     "name": "dayvsonspacca/beacon-contracts",
     "description": "Contracts (client interface and value objects) for the Beacon event platform",
     "type": "library",
-    "keywords": ["beacon", "contracts", "events", "pubsub"],
+    "license": "MIT",
+    "keywords": [
+        "beacon",
+        "contracts",
+        "events",
+        "pubsub"
+    ],
     "authors": [
         {
             "name": "Dayvson Spacca",

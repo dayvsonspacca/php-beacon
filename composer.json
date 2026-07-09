@@ -2,6 +2,7 @@
     "name": "dayvsonspacca/php-beacon",
     "description": "Monorepo for the Beacon PHP packages (contracts, guzzle-client)",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dayvson Spacca",

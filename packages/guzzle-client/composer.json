@@ -2,7 +2,14 @@
     "name": "dayvsonspacca/beacon-guzzle-client",
     "description": "Guzzle implementation of the Beacon contracts",
     "type": "library",
-    "keywords": ["beacon", "guzzle", "client", "events", "pubsub"],
+    "license": "MIT",
+    "keywords": [
+        "beacon",
+        "guzzle",
+        "client",
+        "events",
+        "pubsub"
+    ],
     "authors": [
         {
             "name": "Dayvson Spacca",
