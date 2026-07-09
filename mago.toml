@@ -6,7 +6,7 @@ php-version = "8.5.0"
 
 [source]
 workspace = "."
-paths = ["src/", "tests/"]
+paths = ["packages/"]
 includes = ["vendor"]
 excludes = []
 
@@ -28,9 +28,9 @@ halstead = { effort-threshold = 7000 }
 plugins = []
 ignore = [
     # Tests intentionally trigger exceptions and pass invalid arguments to assert failures.
-    { code = "unhandled-thrown-type", in = ["tests/"] },
-    { code = "invalid-argument", in = ["tests/"] },
-    { code = "possibly-invalid-argument", in = ["tests/"] },
+    { code = "unhandled-thrown-type", in = ["packages/*/tests/**"] },
+    { code = "invalid-argument", in = ["packages/*/tests/**"] },
+    { code = "possibly-invalid-argument", in = ["packages/*/tests/**"] },
 ]
 find-unused-definitions = true
 find-unused-expressions = true
