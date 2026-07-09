@@ -26,11 +26,16 @@ halstead = { effort-threshold = 7000 }
 
 [analyzer]
 plugins = []
+ignore = [
+    # Tests intentionally trigger exceptions and pass invalid arguments to assert failures.
+    { code = "unhandled-thrown-type", in = ["tests/"] },
+    { code = "invalid-argument", in = ["tests/"] },
+    { code = "possibly-invalid-argument", in = ["tests/"] },
+]
 find-unused-definitions = true
 find-unused-expressions = true
 analyze-dead-code = false
 memoize-properties = true
-allow-possibly-undefined-array-keys = false
 check-throws = true
 unchecked-exceptions = ["Error", "LogicException"]
 unchecked-exception-classes = []
