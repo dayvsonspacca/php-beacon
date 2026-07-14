@@ -1,6 +1,6 @@
 # php-beacon
 
-Monorepo for the [Beacon]([https://github.com/dayvsonspacca](https://github.com/dayvsonspacca/beacon)) PHP packages — contracts and client implementations for publishing events to a Beacon server.
+Monorepo for the [Beacon](https://github.com/dayvsonspacca/beacon) PHP packages — contracts and client implementations for publishing events to a Beacon server.
 
 ## Packages
 
